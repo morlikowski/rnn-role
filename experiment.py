@@ -16,11 +16,12 @@ num_runs        = 3
 minibatch_size  = 50
 
 results_data_dir   = 'results'
-mscoco_dir         = '.../coco-caption-master' #directory to mscoco evaluation code downloaded from https://github.com/tylin/coco-caption
-def get_raw_input_data_dir(dataset):
-    return '.../'+dataset #directory to karpathy flickr8k or flickr30k dataset downloaded from http://cs.stanford.edu/people/karpathy/deepimagesent/
 
-sys.path.append(mscoco_dir)
+def get_raw_input_data_dir(dataset):
+    return 'data/'+dataset
+
+mscoco_dir = get_raw_input_data_dir("coco")
+
 from pycocotools.coco import COCO
 from pycocoevalcap.eval import COCOEvalCap
 
@@ -190,7 +191,7 @@ for dataset in [ 'flickr8k', 'flickr30k' ]:
 
         ################################################################
         print('Training...')
-
+        
         for layer_size in [ 128, 256, 512 ]:
             for method in [ 'merge', 'inject' ]:
                 for run in range(1, num_runs+1):
