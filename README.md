@@ -6,6 +6,9 @@ This paper investigates whether the RNN should be viewed as a sequence generator
 
 Works on both python 2 and python 3 (except for the MSCOCO evaluation toolkit which requires python 2) and uses TensorFlow 1.0.
 
-Python dependencies (install all with pip):
-  * tensorflow
-  * future
+## Setup
+
+*setup.sh* downloads all three datasets (flickr8k, flickr30k and MSCOCO) and install all dependencies via pip.
+Alternatively, you can copy/link existing data to data/flickr8k, data/flickr30k or data/coco and run pip install -r requirements.txt manually.
+
+Before running *experiment.py*, you need to copy the *results/* directory to a different directory. The script fails with existing results and does not override them.
