@@ -1,3 +1,4 @@
+future==0.16.0
 tensorflow==1.0.0
 matplotlib==2.1.0rc1
 scikit-image==0.13.0
